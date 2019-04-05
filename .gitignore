@@ -1,0 +1,9 @@
+# .gitignore
+
+recyclebin/
+venv/
+.vscode/
+.ipynb-checkpoints/
+output/
+
+*.csv
