@@ -12,12 +12,12 @@ A script which generates a randomized dataset. Process mining this dataset shoul
 ## Input
 In order to generate the dataset, the *process* is described through an Excel input file. Use input.sample.xlsx as an example. Fill in the following sheets:
 
-* **activities**: List all the process activities here. Give each activity an *unique id*. The order of the list does not matter here.
+* **activity**: List all the process activities here. Give each activity an *unique id*. The order of the list does not matter here.
     * Don't change or remove the rows with start activity `0` and end activity `N`.
 * **process_flow**: This sheets describes the flow of cases throught the process. For each `activity_id` list the possible `next_activity_id`s and corresponding `probability` (value 0 to 1).
     * The sum of probabilities for each activity should equal 1.
-* **case_properties** (optional): Yet to be implemented.
-* **activity_properties** (optional): Yet to be implemented.
+* **case_property** (optional): Yet to be implemented.
+* **activity_property** (optional): Yet to be implemented.
 
 ## Script parameters
 The script uses some parameters:

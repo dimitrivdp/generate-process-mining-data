@@ -4,6 +4,9 @@ recyclebin/
 venv/
 .vscode/
 .ipynb-checkpoints/
+__pycache__/
 output/
 input/
+dev/
+
 ~$*
