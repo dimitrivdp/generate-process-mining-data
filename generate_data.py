@@ -1,14 +1,31 @@
 """
 Generate process mining data
 """
+# Run from the command-line:
+# python generate_data.py [input_file] [approx_rows] [--help]
+
 
 #%%
-# Global variables
-# TODO: Also parse these as input argument
-approx_max_rows = 1000
-input_file = './input.sample.xlsx'
+# Parse input arguments
+import argparse
+def parse_input_args():
+    parser = argparse.ArgumentParser(description='Generate process mining data using an input file.')
+    parser.add_argument(
+        'input_file',
+        nargs='?',
+        default='./input.example.xlsx',
+        help='provide the input Excel file (default: input.example.xlsx)'
+    )
+    parser.add_argument(
+        'approx_rows',
+        nargs='?',
+        type=int,
+        default=1000,
+        help='provide the approximate number of rows of the output dataset (default: 1000)'
+    )
+    return parser.parse_args() 
 
-# Change here the duration unit (seconds, minutes, days, etc)
+# Change the duration unit (seconds, minutes, days, etc) here
 from datetime import timedelta
 def to_timedelta(x):
     return timedelta(minutes=float(x))
@@ -92,6 +109,8 @@ def determine_next_activity(current_activity):
 
     # Get current probabilities from input file
     # TODO: Prepare these lists & probs in one table. Huge performance win here
+    # So combine Excel [flow] into [activities] into 2 columns {next_steps, probs} containing lists
+    # The exact same thing can be done for [activity_properties] !
     current_activity_id = current_activity.activity_id
     next_possible_activities = df_input['flow'].loc[current_activity_id, 'next_activity_id']
     probabilities = df_input['flow'].loc[current_activity_id, 'probability']
@@ -127,21 +146,28 @@ def determine_next_activity_start_time(current_activity):
     # Add to the current activity's start time
     return current_activity.start_time + to_timedelta(duration)
 
+
 #%% 
 """
 Main
 """
 import pandas as pd
+import time
 if __name__ == "__main__":
+    
+    # Start timer
+    timer = time.time()
+
+    # Parse input arguments
+    args = parse_input_args()
 
     # Read input
-    df_input = read_input(input_file)
+    print('Reading input from:', args.input_file)
+    df_input = read_input(args.input_file)
 
     # Set (hard coded) first and last activity of the process
     first_activity = 0
     last_activity = 'N'
-    print('First activity:', first_activity)
-    print('Last activity:', last_activity)
 
     # Set t0
     # TODO: For now, all activities start at t0. This should become some time span
@@ -152,18 +178,28 @@ if __name__ == "__main__":
     df = pd.DataFrame()
 
     # Generate random cases based on the input file
-    while len(df) < approx_max_rows:
+    print('Processing row:')
+    while len(df) < args.approx_rows:
         df = df.append(generate_random_case(df_input))
+        print('\r' + str(len(df)), end='')
 
     # Add activity name column
-    df = df.merge(df_input['activity'].loc[:, 'activity_name'], how='left', left_on='activity_id', right_index=True)
+    df = df.merge(
+        df_input['activity'].loc[:, 'activity_name'],
+        how='left',
+        left_on='activity_id',
+        right_index=True
+    )
+
+    # Stop the timer
+    print('\nDone in: %.1f sec' % (time.time() - timer))
 
     # Inspect
+    print('Output table shape: ', end='')
     inspect_df(df)
 
     # Save to file
     from os import makedirs
     makedirs('./output', exist_ok=True)
     df.to_csv('./output/process_data.csv', index=False)
-
-
+    print('Dataset saved in: output/process_data.csv')
