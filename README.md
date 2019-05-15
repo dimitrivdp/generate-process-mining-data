@@ -12,17 +12,17 @@ These instructions assume you've installed Python and git.
 ## Input
 In order to generate the dataset, the *process* should be described through an Excel input file. Use input.example.xlsx as an example. Fill in the following sheets:
 
-* **activity**: List all the process activities here. Give each activity an *unique id*. The order of the list does not matter here.
-    * Don't change or remove the rows with start activity `0` and end activity `N`. The script needs those as a universal start and end point.
-* **process_flow**: Describe the flow of cases through the process. For each `activity_id` list the possible `next_activity_id`s and corresponding `probability` (value 0 to 1).
-    * The sum of probabilities for each activity should equal 1.
+* **step**: List all the process activities here. Give each step an *unique id*. The order of the list does not matter here.
+    * Don't change or remove the rows with start step `0` and end step `N`. The script needs those as a universal start and end point.
+* **process_flow**: Describe the flow of cases through the process. For each `step_id` list the possible `next_step_id`s and corresponding `probability` (value 0 to 1).
+    * The sum of probabilities for each step should equal 1.
 * **case_property** (optional): Yet to be implemented.
-* **activity_property** (optional): Yet to be implemented.
+* **step_property** (optional): Yet to be implemented.
 
 ## Output
 The dataset will be stored as a csv in the output directory.
 
 
 ```python
-#TODO: Add end_time, case_properties and activity_properties.
+#TODO: Add end_time, case_properties and step_properties.
 ```

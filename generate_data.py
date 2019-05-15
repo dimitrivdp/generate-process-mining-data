@@ -30,173 +30,223 @@ from datetime import timedelta
 def to_timedelta(x):
     return timedelta(minutes=float(x))
 
-# Inspect dataframe
-def inspect_df(df):
+# Inspect a dataframe
+import pandas as pd 
+def inspect_df(df, n=5):
     print(df.shape)
     try:
-        display(df.head())
+        display(df.head(n))
     except NameError:
-        print(df.head())
+        print(df.head(n))
 
-# Input file must have sheets: activity, flow and optionally case_property and activity_property
+# Input file must have sheets: step, flow and optionally case_property and step_property
 from xlrd import XLRDError
 def read_input(input_file):
 
-    # Required sheets
-    df = {
+    # Load the required sheets in a dict
+    d = {
         # Note to self: Always use singular table names. If you ever forget, just google why.
-        'activity': pd.read_excel(input_file, sheet_name='activity', index_col='activity_id'),
-        'flow': pd.read_excel(input_file, sheet_name='process_flow', index_col='activity_id')
+        'step': pd.read_excel(input_file, sheet_name='step', index_col='step_id'),
+        'process_flow': pd.read_excel(input_file, sheet_name='process_flow', index_col='step_id')
     }
 
     # Optional sheets
     try:
-        df.update({
+        d.update({
             'case_property': pd.read_excel(input_file, sheet_name='case_property', index_col='property_type'),
-            'activity_property': pd.read_excel(input_file, sheet_name='activity_property', index_col='activity_id')
+            'step_property': pd.read_excel(input_file, sheet_name='step_property', index_col='step_id')
         })
     except XLRDError as e:
         print(repr(e))
         pass
 
     # TODO: assert that
-    # Activities: first activity and last activity must be duration = 0
+    # Activities: first step and last step must be duration = 0
     # All probability columns: negative probability can not exist
     # All probability columns: all rows must sum to 1, except row N, must all equal 0
 
-    return df
+    return d
 
-# Generate a random case which runs through the entire process
-from uuid import uuid4
-def generate_random_case(df_input):
+# Process the input dictionary with all Excel sheets
+def process_input(d):
     
-    # Initialize a random activity which starts at the first activity at t0
-    case_id = str(uuid4())
-    df = pd.DataFrame.from_dict({
-        'case_id': [case_id],
-        'activity_id': [first_activity],
-        'start_time': [t0]
-        # TODO: Variate t0 for different cases
-    })
+    # Get the step sheet
+    df_step = d['step']
+
+    # Convert the duration column to a timedelta
+    df_step.duration = df_step.duration.apply(to_timedelta)
+
+    # Get the process flow sheet and group it into lists per step_id
+    df_flow = (
+        d['process_flow'].groupby(by='step_id').agg(list)
+        .rename(columns={
+            'next_step_id': 'next_possible_steps_id',
+            'probability': 'next_possible_steps_probability'
+        })
+    )
+
+    # Update the step dataframe with next possible steps info
+    df_step = pd.merge(df_step, df_flow, how='left', on='step_id')
+
+    # TODO: Check the optional sheets
+    if 'step_property' in d.keys():
+        # Also process the step properties
+        # TODO: Something like this returns a useful pivot table
+        d['step_property'].pivot_table(
+            values=['property', 'probability'], 
+            index='step_id', 
+            columns='property_type', 
+            aggfunc=list
+        )
     
-    # Run the activity through the process activities
-    while True:
+    # TODO: Also get, process and return df_case
+    return df_step
 
-        # Get current activity, which is the last row in the dataframe
-        current_activity = df.iloc[-1]
-                
-        # Determine next activity and its start time
-        next_activity = determine_next_activity(current_activity)
-        next_activity_start_time = determine_next_activity_start_time(current_activity)
-        # TODO: wait time in the input.xlsx and end time in the output
-
-        # Append to dataframe
-        df = df.append(pd.DataFrame.from_dict({
-            'case_id': [case_id],
-            'activity_id': [next_activity],
-            'start_time': [next_activity_start_time]
-        }))
-
-        # Stop if arrived at last activity
-        if next_activity == last_activity:
-            break
-    
-    return df
-
-# Determine the next activity based on the current activity and the probability table from input file
-from random import choices
-def determine_next_activity(current_activity):
-
-    # Get current probabilities from input file
-    # TODO: Prepare these lists & probs in one table. Huge performance win here
-    # So combine Excel [flow] into [activities] into 2 columns {next_steps, probs} containing lists
-    # The exact same thing can be done for [activity_properties] !
-    current_activity_id = current_activity.activity_id
-    next_possible_activities = df_input['flow'].loc[current_activity_id, 'next_activity_id']
-    probabilities = df_input['flow'].loc[current_activity_id, 'probability']
-    
-    # Determine the next activity
-    if type(probabilities) is not pd.core.series.Series and probabilities == 1:
-        # Just 1 option
-        return next_possible_activities
-    else:
-        # Choose
-        next_activity = choices(list(next_possible_activities), list(probabilities))[0]
-        return next_activity
-
-# Determine start time of the next activity based on the current activity's duration
+# Randomize a timedelta
 from random import gauss, random
-def determine_next_activity_start_time(current_activity):
+def randomize_duration(dt, outlier):
 
-    # Get info from input file
-    # TODO: Prepare this info in one activity table and use this in current_activity. For performance
-    current_activity_id = current_activity.activity_id
-    current_activity_info = df_input['activity'].loc[current_activity_id, :]
-
-    # Could this be an outlier (user input based and 1% chance)?
-    if current_activity_info.outliers and random() < 0.01:
+    # Could this be an outlier (user input based times 1% chance)?
+    if outlier and random() < 0.01:
         # Outlier between 1 and 10 times the duration
-        duration = (1 + 9 * random()) * current_activity_info.duration
+        return (1 + 9 * random()) * dt
     else:
         # Else use a normal distribution
-        mu = current_activity_info.duration
+        mu = dt
         sigma = mu / 10
-        duration = gauss(mu, sigma)
+        return gauss(mu, sigma)
 
-    # Add to the current activity's start time
-    return current_activity.start_time + to_timedelta(duration)
+# The case (a "case" as refered to in process mining) object
+from uuid import uuid4
+from datetime import datetime
+from random import choices
+class Case:
+    """
+    A case object which can walk through the process and always *is* at some 
+    step at some point in time.
+    """
 
+    # Attributes of a new instance of Case
+    def __init__(self):
+        self.uuid = str(uuid4())
+        self.current_step_id = first_step_id
+        self.current_step_start_time = datetime.now()
+
+        # Keep track of history
+        self.history = pd.DataFrame()
+        self.write_history()
+
+    # Methods of instances of Case
+    def write_history(self):
+
+        # Create new history based on current status
+        new_history = pd.DataFrame(data={
+            'case_id': [self.uuid],
+            'step_id': [self.current_step_id],
+            'start_time': [self.current_step_start_time],
+            'end_time': [None]
+        })
+        self.history = pd.concat([self.history, new_history])
+
+    def go_to_next_step(self):
+        
+        # Obtain step info of the current step from input file
+        this_step = df_step.loc[self.current_step_id]
+
+        # Choose (random) next step
+        next_step_id = choices(
+            this_step.next_possible_steps_id, 
+            this_step.next_possible_steps_probability
+        )[0]
+
+        # Calculate next step start time
+        next_step_start_time = randomize_duration(
+            this_step.duration, 
+            this_step.outliers
+        )
+
+        # Update current status
+        self.current_step_id = next_step_id
+        self.current_step_start_time += next_step_start_time
+        self.write_history()
+
+        #
+        return self.current_step_id
+
+    def walk_through_process(self):
+
+        # Keep going to the next step until you're at the last step. Makes sense right?
+        while self.current_step_id != last_step_id:
+            self.go_to_next_step()
+
+# Some specific tasks to add info to the basic dataset
+def post_processing(df):
+
+    # Add step name to each step id
+    df = df.merge(
+        df_step.loc[:, 'step_name'],
+        how='left',
+        left_on='step_id',
+        right_index=True
+    )
+
+    # TODO: Add step properties here
+
+    # TODO: Add case properties here
+
+    # Reset the index, just for neatness
+    df.reset_index(drop=True, inplace=True)
+
+    return df
 
 #%% 
 """
 Main
 """
-import pandas as pd
 import time
 if __name__ == "__main__":
     
     # Start timer
     timer = time.time()
 
-    # Parse input arguments
+    # Parse command-line input arguments
     args = parse_input_args()
 
-    # Read input
+    # Read and process the sheets from the input Excel
     print('Reading input from:', args.input_file)
-    df_input = read_input(args.input_file)
+    df_step = process_input(read_input(args.input_file))
+    
+    # If you are new to this script, definitely take a look at this dataframe
+    #inspect_df(df_step, n=10)
 
-    # Set (hard coded) first and last activity of the process
-    first_activity = 0
-    last_activity = 'N'
+    # Some constants which apply for all cases
+    first_step_id = 'START'
+    last_step_id = 'END'
 
-    # Set t0
-    # TODO: For now, all activities start at t0. This should become some time span
-    from datetime import datetime
-    t0 = datetime.now()
-
-    # Initialize dataframe
+    # Generate random cases until dataframe is full
     df = pd.DataFrame()
-
-    # Generate random cases based on the input file
     print('Processing row:')
     while len(df) < args.approx_rows:
-        df = df.append(generate_random_case(df_input))
+        
+        # Initialize a random case
+        case = Case()
+
+        # Walk through the entire process
+        case.walk_through_process()
+
+        # Extract the history and append to the main dataframe
+        df = df.append(case.history)
         print('\r' + str(len(df)), end='')
 
-    # Add activity name column
-    df = df.merge(
-        df_input['activity'].loc[:, 'activity_name'],
-        how='left',
-        left_on='activity_id',
-        right_index=True
-    )
+    # Now the basics dataset is done, but let's add some extra specific info
+    df = post_processing(df)
 
     # Stop the timer
     print('\nDone in: %.1f sec' % (time.time() - timer))
 
     # Inspect
-    print('Output table shape: ', end='')
-    inspect_df(df)
+    print('Shape of output table: ', end='')
+    inspect_df(df, n=10)
 
     # Save to file
     from os import makedirs
