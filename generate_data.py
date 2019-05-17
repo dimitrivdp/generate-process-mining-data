@@ -1,11 +1,15 @@
 """
 Generate process mining data
-"""
-# Run from the command-line:
-# python generate_data.py [input_file] [approx_rows] [--help]
 
+Run from the command-line:
+python generate_data.py [input_file] [approx_rows] [--help]
+"""
 
 #%%
+# Global constants
+first_step_id = 'START'
+last_step_id = 'END'
+
 # Parse input arguments
 import argparse
 def parse_input_args():
@@ -25,7 +29,7 @@ def parse_input_args():
     )
     return parser.parse_args() 
 
-# Change the duration unit (seconds, minutes, days, etc) here
+# You can change the unit of duration (seconds, minutes, days, etc) here
 from datetime import timedelta
 def to_timedelta(x):
     return timedelta(minutes=float(x))
@@ -73,8 +77,9 @@ def process_input(d):
     # Get the step sheet
     df_step = d['step']
 
-    # Convert the duration column to a timedelta
+    # Convert the time columns to a timedelta
     df_step.duration = df_step.duration.apply(to_timedelta)
+    df_step.wait_time = df_step.wait_time.apply(to_timedelta)
 
     # Get the process flow sheet and group it into lists per step_id
     df_flow = (
@@ -104,15 +109,15 @@ def process_input(d):
 
 # Randomize a timedelta
 from random import gauss, random
-def randomize_duration(dt, outlier):
+def randomize_duration(duration, might_be_outlier):
 
     # Could this be an outlier (user input based times 1% chance)?
-    if outlier and random() < 0.01:
-        # Outlier between 1 and 10 times the duration
-        return (1 + 9 * random()) * dt
+    if might_be_outlier and random() < 0.01:
+        # Outlier between 1 and 10 times the value
+        return (1 + 9 * random()) * duration
     else:
         # Else use a normal distribution
-        mu = dt
+        mu = duration
         sigma = mu / 10
         return gauss(mu, sigma)
 
@@ -126,58 +131,93 @@ class Case:
     step at some point in time.
     """
 
-    # Attributes of a new instance of Case
+    # Initiate attributes of a new instance of Case
     def __init__(self):
         self.uuid = str(uuid4())
-        self.current_step_id = first_step_id
-        self.current_step_start_time = datetime.now()
+        self.now = datetime.now() #TODO: Randomize this
+        self.done = False
 
-        # Keep track of history
+        # Initiate current state with some values in a dictionary
+        # Note: Don't try slicing the last row of self.history. You won't be able to set values properly. Read http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#why-does-assignment-fail-when-using-chained-indexing
+        self.current = {
+            'case_id': self.uuid,
+            'step_id': first_step_id,
+            'start_time': self.now,
+            'end_time': None
+        }
+
+        # Also keep track of all previous steps in a dataframe
         self.history = pd.DataFrame()
-        self.write_history()
 
-    # Methods of instances of Case
-    def write_history(self):
-
-        # Create new history based on current status
-        new_history = pd.DataFrame(data={
-            'case_id': [self.uuid],
-            'step_id': [self.current_step_id],
-            'start_time': [self.current_step_start_time],
-            'end_time': [None]
-        })
-        self.history = pd.concat([self.history, new_history])
-
-    def go_to_next_step(self):
+    def end_current_step(self):
         
-        # Obtain step info of the current step from input file
-        this_step = df_step.loc[self.current_step_id]
+        # Proceed to the end of the step
+        self.now += randomize_duration(
+            df_step.loc[self.current['step_id'], 'duration'],
+            df_step.loc[self.current['step_id'], 'outliers']
+        )
+        
+        # This moment is the end time of the current step
+        self.current['end_time'] = self.now
 
-        # Choose (random) next step
-        next_step_id = choices(
-            this_step.next_possible_steps_id, 
-            this_step.next_possible_steps_probability
-        )[0]
+        # The step is finished so write the current status to history
+        self.history = self.history.append(self.current, ignore_index=True)
 
-        # Calculate next step start time
-        next_step_start_time = randomize_duration(
-            this_step.duration, 
-            this_step.outliers
+    def wait_after_step(self):
+
+        # Add some wait time, that's all for now
+        self.now += randomize_duration(
+            df_step.loc[self.current['step_id'], 'wait_time'],
+            False
         )
 
-        # Update current status
-        self.current_step_id = next_step_id
-        self.current_step_start_time += next_step_start_time
-        self.write_history()
+    def go_to_next_step(self):
 
-        #
-        return self.current_step_id
+        # First end the current step
+        self.end_current_step()
+
+        # When we've just ended the final step we can stop here
+        if self.current['step_id'] == last_step_id:
+            self.done = True
+            return
+
+        # Then wait
+        self.wait_after_step()
+
+        # And choose (random) the next step
+        # TODO: Maybe, instead of using full df_step, pass df_step.loc[this_stepid, :] to this function
+        next_step_id = choices(
+            df_step.loc[self.current['step_id'], 'next_possible_steps_id'], 
+            df_step.loc[self.current['step_id'], 'next_possible_steps_probability']
+        )[0]
+
+        # Actually start the next step by creating a new current status
+        self.current = {
+            'case_id': self.uuid,
+            'step_id': next_step_id,
+            'start_time': self.now,
+            'end_time': None
+        }
 
     def walk_through_process(self):
 
-        # Keep going to the next step until you're at the last step. Makes sense right?
-        while self.current_step_id != last_step_id:
+        # Keep proceeding to the next step until the case is done. Makes sense right?
+        while not self.done:
             self.go_to_next_step()
+        
+
+
+"""
+Process layout
+
+  x---------------x---------------x                             x-----------------x
+START                           1                               END
+init
+    end_current_step     wait_after_step
+            go_to_next_step
+
+
+"""
 
 # Some specific tasks to add info to the basic dataset
 def post_processing(df):
@@ -216,14 +256,10 @@ if __name__ == "__main__":
     print('Reading input from:', args.input_file)
     df_step = process_input(read_input(args.input_file))
     
-    # If you are new to this script, definitely take a look at this dataframe
+    # Note: If you are new to this script, definitely take a look at this dataframe
     #inspect_df(df_step, n=10)
 
-    # Some constants which apply for all cases
-    first_step_id = 'START'
-    last_step_id = 'END'
-
-    # Generate random cases until dataframe is full
+    # Generate random cases until the dataframe is full
     df = pd.DataFrame()
     print('Processing row:')
     while len(df) < args.approx_rows:
