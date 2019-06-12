@@ -24,7 +24,7 @@ def parse_input_args():
         'approx_rows',
         nargs='?',
         type=int,
-        default=1000,
+        default=100,
         help='provide the approximate number of rows of the output dataset (default: 1000)'
     )
     return parser.parse_args() 
@@ -43,23 +43,24 @@ def inspect_df(df, n=5):
     except NameError:
         print(df.head(n))
 
-# Input file must have sheets: step, flow and optionally case_property and step_property
+# Input file must have sheets: step, flow and optionally case_properties and step_properties
 from xlrd import XLRDError
-def read_input(input_file):
+def read_input_file(input_file):
 
     # Load the required sheets in a dict
     d = {
-        # Note to self: Always use singular table names. If you ever forget, just google why.
-        'step': pd.read_excel(input_file, sheet_name='step', index_col='step_id'),
+        'steps': pd.read_excel(input_file, sheet_name='steps', index_col='step_id'),
         'process_flow': pd.read_excel(input_file, sheet_name='process_flow', index_col='step_id')
     }
 
     # Optional sheets
     try:
-        d.update({
-            'case_property': pd.read_excel(input_file, sheet_name='case_property', index_col='property_type'),
-            'step_property': pd.read_excel(input_file, sheet_name='step_property', index_col='step_id')
-        })
+        d.update({'case_properties': pd.read_excel(input_file, sheet_name='case_properties', index_col='property_type')})
+    except XLRDError as e:
+        print(repr(e))
+        pass
+    try:
+        d.update({'step_properties': pd.read_excel(input_file, sheet_name='step_properties', index_col='step_id')})
     except XLRDError as e:
         print(repr(e))
         pass
@@ -72,10 +73,10 @@ def read_input(input_file):
     return d
 
 # Process the input dictionary with all Excel sheets
-def process_input(d):
+def process_input_file(d):
     
-    # Get the step sheet
-    df_step = d['step']
+    # Get the step sheet as a dataframe
+    df_step = d['steps']
 
     # Convert the time columns to a timedelta
     df_step.duration = df_step.duration.apply(to_timedelta)
@@ -83,29 +84,33 @@ def process_input(d):
 
     # Get the process flow sheet and group it into lists per step_id
     df_flow = (
-        d['process_flow'].groupby(by='step_id').agg(list)
+        d['process_flow']
+        .groupby(by='step_id').agg(list)
         .rename(columns={
             'next_step_id': 'next_possible_steps_id',
             'probability': 'next_possible_steps_probability'
         })
     )
 
-    # Update the step dataframe with next possible steps info
+    # Join the step dataframe with next possible steps info
     df_step = pd.merge(df_step, df_flow, how='left', on='step_id')
 
+    # Optionally process the optional sheets
+    if 'case_properties' in d.keys():
+        df_case_properties = d['case_properties'].groupby(by='property_type').agg(list)
+
     # TODO: Check the optional sheets
-    if 'step_property' in d.keys():
+    if 'step_properties' in d.keys():
         # Also process the step properties
         # TODO: Something like this returns a useful pivot table
-        d['step_property'].pivot_table(
+        d['step_properties'].pivot_table(
             values=['property', 'probability'], 
             index='step_id', 
             columns='property_type', 
             aggfunc=list
         )
     
-    # TODO: Also get, process and return df_case
-    return df_step
+    return (df_step, df_case_properties)
 
 # Randomize a timedelta
 from random import gauss, random
@@ -133,7 +138,7 @@ class Case:
 
     # Initiate attributes of a new instance of Case
     def __init__(self):
-        self.uuid = str(uuid4())
+        self.uuid = str(uuid4())[:8]
         self.now = datetime.now() #TODO: Randomize this
         self.done = False
 
@@ -153,21 +158,21 @@ class Case:
         
         # Proceed to the end of the step
         self.now += randomize_duration(
-            df_step.loc[self.current['step_id'], 'duration'],
-            df_step.loc[self.current['step_id'], 'outliers']
+            df_steps.loc[self.current['step_id'], 'duration'],
+            df_steps.loc[self.current['step_id'], 'has_outliers']
         )
         
-        # This moment is the end time of the current step
+        # Now is the end time of the current step
         self.current['end_time'] = self.now
 
-        # The step is finished so write the current status to history
+        # This step is done so write the current status to history
         self.history = self.history.append(self.current, ignore_index=True)
 
     def wait_after_step(self):
 
         # Add some wait time, that's all for now
         self.now += randomize_duration(
-            df_step.loc[self.current['step_id'], 'wait_time'],
+            df_steps.loc[self.current['step_id'], 'wait_time'],
             False
         )
 
@@ -185,10 +190,9 @@ class Case:
         self.wait_after_step()
 
         # And choose (random) the next step
-        # TODO: Maybe, instead of using full df_step, pass df_step.loc[this_stepid, :] to this function
         next_step_id = choices(
-            df_step.loc[self.current['step_id'], 'next_possible_steps_id'], 
-            df_step.loc[self.current['step_id'], 'next_possible_steps_probability']
+            df_steps.loc[self.current['step_id'], 'next_possible_steps_id'], 
+            df_steps.loc[self.current['step_id'], 'next_possible_steps_probability']
         )[0]
 
         # Actually start the next step by creating a new current status
@@ -200,31 +204,37 @@ class Case:
         }
 
     def walk_through_process(self):
+        """
+        Process layout and corresponding methods
+
+        START       __init__()
+          |         end_current_step()
+          x                                   > go_to_next_step()
+          |         wait_after_step()
+         (1)
+          |         end_current_step()
+          x                                   > go_to_next_step()
+          |         wait_after_step()
+         (2) 
+          .
+          .
+          .
+         END
+          |         end_current_step()
+          x         self.done = True
+        """
 
         # Keep proceeding to the next step until the case is done. Makes sense right?
         while not self.done:
             self.go_to_next_step()
-        
-
-
-"""
-Process layout
-
-  x---------------x---------------x                             x-----------------x
-START                           1                               END
-init
-    end_current_step     wait_after_step
-            go_to_next_step
-
-
-"""
 
 # Some specific tasks to add info to the basic dataset
 def post_processing(df):
 
-    # Add step name to each step id
+    """ Post processing regarding individual steps """
+    # Add the step name to each corresponding step id
     df = df.merge(
-        df_step.loc[:, 'step_name'],
+        df_steps.loc[:, 'step_name'],
         how='left',
         left_on='step_id',
         right_index=True
@@ -232,12 +242,38 @@ def post_processing(df):
 
     # TODO: Add step properties here
 
-    # TODO: Add case properties here
+
+    """ Post processing regarding cases """
+    # Give each case_id the properties supplied in the input file
+    def determine_the_case_properties(unique_case_ids):
+            
+        # Get all unique case_ids as a dataframe
+        unique_case_ids = pd.DataFrame({'case_id': unique_case_ids})
+
+        # For each case property in the input file, choose a value and put it in an extra column
+        for property_type in df_case_properties.index:
+            unique_case_ids[property_type] = choices(
+                list(df_case_properties.loc[property_type, 'value']),
+                list(df_case_properties.loc[property_type, 'probability']),
+                k=len(unique_case_ids)
+            )
+        
+        return unique_case_ids
+
+    # Get properties for every case_id and join them to our main dataframe
+    unique_cases_with_properties = determine_the_case_properties(df.case_id.unique())
+    df = df.merge(unique_cases_with_properties, how='left', on='case_id')
+
+
+    """ General post processing """
+    # TODO: Assert no duplicate UUIDs
 
     # Reset the index, just for neatness
     df.reset_index(drop=True, inplace=True)
 
     return df
+
+
 
 #%% 
 """
@@ -246,7 +282,7 @@ Main
 import time
 if __name__ == "__main__":
     
-    # Start timer
+    # Start timer - only to record script run time
     timer = time.time()
 
     # Parse command-line input arguments
@@ -254,10 +290,10 @@ if __name__ == "__main__":
 
     # Read and process the sheets from the input Excel
     print('Reading input from:', args.input_file)
-    df_step = process_input(read_input(args.input_file))
+    (df_steps, df_case_properties) = process_input_file(read_input_file(args.input_file))
     
     # Note: If you are new to this script, definitely take a look at this dataframe
-    #inspect_df(df_step, n=10)
+    #inspect_df(df_steps, n=10)
 
     # Generate random cases until the dataframe is full
     df = pd.DataFrame()
@@ -274,7 +310,7 @@ if __name__ == "__main__":
         df = df.append(case.history)
         print('\r' + str(len(df)), end='')
 
-    # Now the basics dataset is done, but let's add some extra specific info
+    # The basic dataset is done, but let's add some extra info
     df = post_processing(df)
 
     # Stop the timer
