@@ -10,8 +10,8 @@ print(d.keys())
 
 
 # Process the returned input dictionary
-from generate_data import process_input_file
-df_activity = process_input_file(d)
+from generate_data import merge_flow_into_steps
+df_activity = merge_flow_into_steps(d)
 
 
 

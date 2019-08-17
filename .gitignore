@@ -10,5 +10,4 @@ input/
 dev/
 
 ~$*
-input*.xlsx
-!input.example.xlsx
+.~lock.*
