@@ -1,32 +1,27 @@
-# Generate process mining data
-This *processmine-inator* is a script which generates a randomized dataset to be used for demos or workshops regarding process mining. 
-
-The underlying process should be quantified by filling in the input Excel file. See section **Input** below.
-
-Process mining the output dataset will reveal the underlying process.
+# Generate a process mining dataset
+This script generates a custom, randomized dataset which can be analyzed with process mining. Useful for demos or workshops! 
 
 ## How to use
 These instructions assume you've installed Python and git.
 1. Clone this repository:  
 `git clone https://github.com/eiffelanalytics/generate-process-mining-data`
-1. Create a copy of input.example.xlsx and adjust the tables in the sheets to quantify *your process*.
-1. Run the script from an IDE or a terminal and optionally supply the name of the *input file* and the desired *approximate number of rows* of the output dataset:  
-`python generate_data.py [input_file] [approx_rows]`
+1. Copy and edit one of the example Excel files so it matches *your process*.
+1. Run the script from a terminal:  
+`python generate_data.py [input_file] [approx_rows]`  
+    * `input_file` should be the path and filename to your input Excel file
+    * The script tries to build a dataset with `approx_rows` number of rows
 
-## Input
-The underlying *process* is described with the Excel input file. Use input.example.xlsx as an example and fill in the following sheets:
+## Input Excel file
+You have to define your *process* in an input file. See the example folder for different scenarios.
+> Tip: To make things easier, draw the process on paper before creating the input file.
 
-* **steps**: A step or activity is equivalent to a *box* in the process mine chart. The order of the list does not matter here.
-    * Don't change or remove the rows with start step `START` and end step `END`. The script needs those as a universal start and end point.
-* **process_flow**: Each row is equivalent to an *arrow* in the process mine chart. For each `step_id` list the possible `next_step_id`s and corresponding `probability` (value 0 to 1).
-    * The sum of probabilities for each unique `step_id` should equal 1.
-* **case_properties**: Each unique `property_type` will be an extra column in the output dataset. Each case gets assigned a `value` randomly according to the `probability`.
-* **step_properties** (optional): Yet to be implemented.
+* Sheet `steps`: Basically a list of all steps of the process. The order of the list does not matter here.
+    * Required columns are `step_id` and `duration`.
+    * Optional columns are `step_name`, `wait_time`, `duration_outliers` and `wait_time_outliers`. Also custom attributes, such as `Employee` can be added as a column.
+    > Don't change or remove the rows with `START` and `END`. The script needs those as general start and end points.
+* Sheet `process_flow`: Defines the process flow from step to next step. Specify the possible next steps and probabilities (value 0 to 1).
+    * Layout is fixed with columns `step_id`, `next_step_id` and `probability`.
+    > Verify that the sum of `probability` for each unique `step_id` equals 1.
 
-## Output
+## Output CSV file
 The dataset will be stored as a csv in the output directory.
-
-
-```python
-#TODO: Add step_properties.
-```

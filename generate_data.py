@@ -10,7 +10,7 @@ from os.path import join, split, splitext
 from datetime import timedelta, datetime
 import time
 import pandas as pd
-from random import gauss, random, choices, randrange
+from random import gauss, random, choices
 from uuid import uuid4
 
 
@@ -124,7 +124,6 @@ class Case:
     # Initiate attributes of a new instance of Case
     def __init__(self, process_description):
         self.uuid = str(uuid4())
-        self.done = False
         self.clock = random_datetime_between(*OPERATION_WINDOW)
         self.process_description = process_description
 
@@ -141,7 +140,7 @@ class Case:
         # Keep track of all completed steps in a list
         self.history = []
 
-    def end_current_step(self):
+    def do_current_step(self):
         # Execute the step, so time will pass
         self.clock += randomize_timedelta(
             self.current["duration"], self.current["duration_outliers"]
@@ -160,18 +159,7 @@ class Case:
         )
 
     def go_to_next_step(self):
-        # First end the current step
-        self.end_current_step()
-
-        # If we've just ended the final step we can stop here
-        if self.current["step_id"] == END:
-            self.done = True
-            return
-
-        # Then wait
-        self.wait_after_step()
-
-        # And choose (random) the next step
+        # Choose (random) the next step
         next_step_id = choices(
             self.current["next_possible_steps_id"],
             self.current["next_possible_steps_probability"],
@@ -188,34 +176,41 @@ class Case:
         }
 
     def walk_through_process(self):
-        """
-        Process layout and corresponding methods
+        """Process layout and corresponding methods
 
-        START       __init__()
-          |         end_current_step()
-          x                                   > go_to_next_step()
-          |         wait_after_step()
-         (1)
-          |         end_current_step()
-          x                                   > go_to_next_step()
-          |         wait_after_step()
-         (2) 
-          .
-          .
-          .
-         END
-          |         end_current_step()
-          x         self.done = True
+        Case.__init__()     > START
+            |
+        do_current_step()   > START completed
+            |
+        wait_after_step()   > Clock ticks
+            |
+        go_to_next_step()   > (Step 1) initiated
+            |
+        do_current_step()   > (Step 1) completed
+            |
+        wait_after_step()   > Clock ticks
+            |
+        go_to_next_step()   > (Step 2) initiated
+            .
+            .
+            .
+        go_to_next_step()   > END initiated
+            |
+        do_current_step()   > END completed
+            |
+        return
+        
         """
 
-        # Keep proceeding to the next step until the case is done. Simple right?
-        while not self.done:
+        # Keep proceeding to the next step until at END. Simple right?
+        while True:
+            # Complete the step and write to self.history
+            self.do_current_step()
+            if self.current["step_id"] == END:
+                return
+            self.wait_after_step()
             self.go_to_next_step()
-            # TODO: This can be
-            # finishcurrentstep
-            # if done: break
-            # waitafterstep
-            # choosenextstep
+
 
 
 def post_processing(df):
@@ -278,5 +273,3 @@ if __name__ == "__main__":
     makedirs("output", exist_ok=True)
     df.to_csv(output_path, index=False)
     print("Dataset saved in: " + output_path)
-
-    # TODO: Write test suite to follow all examples!
