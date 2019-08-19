@@ -10,7 +10,7 @@ from os.path import join, split, splitext
 from datetime import timedelta, datetime
 import time
 import pandas as pd
-from random import gauss, random, choices
+from random import gauss, random, choices, randrange
 from uuid import uuid4
 
 
@@ -20,6 +20,7 @@ END = "END"
 DURATION_UNIT = "minutes"
 INPUT_PATH = "examples/process_123.xlsx"
 APPROX_ROWS = 100
+OPERATION_WINDOW = [datetime(2019, 1, 1), datetime(2019, 1, 1)]
 
 
 def parse_argv(input_path=None, approx_rows=None):
@@ -30,16 +31,16 @@ def parse_argv(input_path=None, approx_rows=None):
     return (input_path, approx_rows)
 
 
-def to_timedelta(x, td_unit="minutes"):
-    return eval("timedelta(" + td_unit + "=float(x))")
-
-
 def inspect_df(df, n=5):
     print(df.shape)
     try:
         display(df.head(n))
     except NameError:
         print(df.head(n))
+
+
+def to_timedelta(x, td_unit="minutes"):
+    return eval("timedelta(" + td_unit + "=float(x))")
 
 
 def read_input_file(input_path):
@@ -67,14 +68,14 @@ def read_input_file(input_path):
 
     # TODO: assert that
     # Activities: first step and last step must be duration = 0
-    # Datatypes: timedeltas and bools
+    # Datatypes: timedeltas and bools, etc
     # All probability columns: negative probability can not exist
     # All probability columns: all rows must sum to 1, except row N, must all equal 0
     return (excel_steps, excel_flow)
 
 
 def merge_flow_into_steps(excel_steps, excel_flow):
-    # Group the flow dataframe into lists for easy usage later on with random.choices()
+    # Group the flow into lists per step_id to use with random.choices()
     excel_flow_grouped = (
         excel_flow.groupby(by="step_id")
         .agg(list)
@@ -85,31 +86,38 @@ def merge_flow_into_steps(excel_steps, excel_flow):
             }
         )
     )
-    # Join the step dataframe with next possible steps info
+    # Join the steps dataframe with grouped flow
     process_description = pd.merge(
         excel_steps, excel_flow_grouped, how="left", on="step_id"
     )
     return process_description
 
 
-def randomize_duration(duration, has_outliers=False):
+def randomize_timedelta(td, has_outliers=False):
     # If the distribution has outliers, 1% will be an outlier
     if has_outliers and random() < 0.01:
         # Outlier lays between 1 and 10 times the original value
-        return (1 + 9 * random()) * duration
+        return (1 + 9 * random()) * td
     else:
         # If not an outlier, use a normal distribution
-        mu = duration
+        mu = td
         sigma = mu / 10
         return gauss(mu, sigma)
 
 
+def random_datetime_between(dt1, dt2):
+    # Returns a datetime dt1 <= N < dt2
+    td = dt2 - dt1
+    random_td = timedelta(seconds=random()*td.total_seconds())
+    return dt1 + random_td
+
+
 class Case:
-    """A case object with an unique id.
+    """A case object with an unique id. A case object walks through the process from
+    START to END following the process description in the input Excel file. 
     
-    Each case starts at START and walks through the process until END following the process 
-    description in the input Excel file. It's current state (step and time) is defined in 
-    self.current and self.history is a list of all completed steps.
+        self.current: The current state of the case (step and time)
+        self.history: A list of all completed steps
     
     """
 
@@ -117,7 +125,7 @@ class Case:
     def __init__(self, process_description):
         self.uuid = str(uuid4())
         self.done = False
-        self.clock = datetime.now()  # TODO: Randomize this
+        self.clock = random_datetime_between(*OPERATION_WINDOW)
         self.process_description = process_description
 
         # Initiate current state with some values in a dictionary
@@ -135,7 +143,7 @@ class Case:
 
     def end_current_step(self):
         # Execute the step, so time will pass
-        self.clock += randomize_duration(
+        self.clock += randomize_timedelta(
             self.current["duration"], self.current["duration_outliers"]
         )
 
@@ -147,7 +155,7 @@ class Case:
 
     def wait_after_step(self):
         # Add some wait time, that's all for now
-        self.clock += randomize_duration(
+        self.clock += randomize_timedelta(
             self.current["wait_time"], self.current["wait_time_outliers"]
         )
 
@@ -270,6 +278,5 @@ if __name__ == "__main__":
     makedirs("output", exist_ok=True)
     df.to_csv(output_path, index=False)
     print("Dataset saved in: " + output_path)
-
 
     # TODO: Write test suite to follow all examples!
