@@ -21,6 +21,7 @@ DURATION_UNIT = "minutes"
 INPUT_PATH = "examples/process_123.xlsx"
 APPROX_ROWS = 100
 OPERATION_WINDOW = [datetime(2019, 1, 1), datetime(2019, 1, 1)]
+# TODO: Add WORKING_HOURS
 
 
 def parse_argv(input_path=None, approx_rows=None):
@@ -108,7 +109,7 @@ def randomize_timedelta(td, has_outliers=False):
 def random_datetime_between(dt1, dt2):
     # Returns a datetime dt1 <= N < dt2
     td = dt2 - dt1
-    random_td = timedelta(seconds=random()*td.total_seconds())
+    random_td = timedelta(seconds=random() * td.total_seconds())
     return dt1 + random_td
 
 
@@ -212,7 +213,6 @@ class Case:
             self.go_to_next_step()
 
 
-
 def post_processing(df):
     # Remove START and END rows
     df = df[(df.step_id != START) & (df.step_id != END)]
@@ -228,6 +228,25 @@ def post_processing(df):
             "next_possible_steps_probability",
         ]
     )
+    return df
+
+
+def apply_pafnow_format(df):
+    # Change column names
+    df.rename(
+        columns={
+            "case_id": "CaseId",
+            "step_id": "ActivityId",
+            "step_name": "ActivityName",
+            "start_time": "Timestamp",
+            "end_time": "TimestampEnd",
+        },
+        inplace=True,
+    )
+
+    # Set date time format to YYYY-MM-DD HH:MM:SS
+    df.Timestamp = df.Timestamp.dt.strftime("%Y-%m-%d %H:%M:%S")
+    df.TimestampEnd = df.TimestampEnd.dt.strftime("%Y-%m-%d %H:%M:%S")
     return df
 
 
@@ -264,6 +283,9 @@ if __name__ == "__main__":
 
     # The basic dataset is done, but we'll do a few more things
     df = post_processing(df)
+
+    # Apply format we need for PAFnow
+    df = apply_pafnow_format(df)
 
     print("\nDone in: %.1f sec" % (time.time() - timer))
     inspect_df(df)
