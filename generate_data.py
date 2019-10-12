@@ -213,7 +213,7 @@ class Case:
             self.go_to_next_step()
 
 
-def post_processing(df):
+def clean_up(df):
     # Remove START and END rows
     df = df[(df.step_id != START) & (df.step_id != END)]
 
@@ -250,10 +250,18 @@ def apply_pafnow_format(df):
     return df
 
 
-if __name__ == "__main__":
-    # Start a timer - only to record script run time
-    timer = time.time()
+def stopwatch(func):
+    # Read about decorators: https://realpython.com/primer-on-python-decorators/
+    def wrapper():
+        timer = time.time()
+        func()
+        print("Done in: %.1f sec" % (time.time() - timer))
 
+    return wrapper
+
+
+@stopwatch
+def main():
     # Parse command line arguments (input filename and approximate number of rows)
     (input_path, approx_rows) = parse_argv(INPUT_PATH, APPROX_ROWS)
 
@@ -271,7 +279,7 @@ if __name__ == "__main__":
 
     # Generate random cases until the dataset is full
     df = pd.DataFrame()
-    print("Processing row:")
+    print("Processing...")
     while len(df) < approx_rows:
         # Start a case and walk through the process
         case = Case(process_description)
@@ -280,14 +288,14 @@ if __name__ == "__main__":
         # Append the history (completed steps) of this case to our dataset
         df = df.append(case.history)
         print("\r" + str(len(df)), end="")
+    print("\n")
 
     # The basic dataset is done, but we'll do a few more things
-    df = post_processing(df)
+    df = clean_up(df)
 
     # Apply format we need for PAFnow
     df = apply_pafnow_format(df)
 
-    print("\nDone in: %.1f sec" % (time.time() - timer))
     inspect_df(df)
 
     # Save to file
@@ -295,3 +303,7 @@ if __name__ == "__main__":
     makedirs("output", exist_ok=True)
     df.to_csv(output_path, index=False)
     print("Dataset saved in: " + output_path)
+
+
+if __name__ == "__main__":
+    main()
