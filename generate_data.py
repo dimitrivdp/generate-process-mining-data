@@ -2,13 +2,15 @@
 
 Run from the command line:
 python generate_data.py [input_path] [approx_rows]
+
+Or run in your IDE without any arguments. Just change the global constants below.
 """
 
 import sys
 from os import makedirs
 from os.path import join, split, splitext
-from datetime import timedelta, datetime
-import time
+from datetime import timedelta, datetime, time
+import time as times
 import pandas as pd
 from random import gauss, random, choices
 from uuid import uuid4
@@ -20,8 +22,9 @@ END = "END"
 DURATION_UNIT = "minutes"
 INPUT_PATH = "examples/process_123.xlsx"
 APPROX_ROWS = 100
-OPERATION_WINDOW = [datetime(2019, 1, 1), datetime(2019, 1, 1)]
-# TODO: Add WORKING_HOURS
+TIME_RANGE = [datetime(2016, 1, 1), datetime(2018, 12, 31)]
+WORKING_HOURS = [time(hour=9), time(hour=17)]
+WORKING_WEEKEND = False
 
 
 def parse_argv(input_path=None, approx_rows=None):
@@ -113,6 +116,15 @@ def random_datetime_between(dt1, dt2):
     return dt1 + random_td
 
 
+def is_working_time(dt):
+    if not WORKING_WEEKEND and dt.weekday() > 4:
+        return False
+    elif dt.time() < WORKING_HOURS[0] or dt.time() > WORKING_HOURS[1]:
+        return False
+    else:
+        return True
+
+
 class Case:
     """A case object with an unique id. A case object walks through the process from
     START to END following the process description in the input Excel file. 
@@ -125,7 +137,7 @@ class Case:
     # Initiate attributes of a new instance of Case
     def __init__(self, process_description):
         self.uuid = str(uuid4())
-        self.clock = random_datetime_between(*OPERATION_WINDOW)
+        self.clock = random_datetime_between(*TIME_RANGE)
         self.process_description = process_description
 
         # Initiate current state with some values in a dictionary
@@ -160,6 +172,13 @@ class Case:
         )
 
     def go_to_next_step(self):
+        # Check if the working day is already over
+        while not is_working_time(self.clock):
+            # Try again tomorrow morning
+            self.clock = self.clock.replace(
+                hour=WORKING_HOURS[0].hour, minute=WORKING_HOURS[0].minute
+            ) + timedelta(days=1)
+
         # Choose (random) the next step
         next_step_id = choices(
             self.current["next_possible_steps_id"],
@@ -203,9 +222,8 @@ class Case:
         
         """
 
-        # Keep proceeding to the next step until at END. Simple right?
+        # Do all the steps until at END. Simple right?
         while True:
-            # Complete the step and write to self.history
             self.do_current_step()
             if self.current["step_id"] == END:
                 return
@@ -253,9 +271,9 @@ def apply_pafnow_format(df):
 def stopwatch(func):
     # Read about decorators: https://realpython.com/primer-on-python-decorators/
     def wrapper():
-        timer = time.time()
+        timer = times.time()
         func()
-        print("Done in: %.1f sec" % (time.time() - timer))
+        print("Done in: %.1f sec" % (times.time() - timer))
 
     return wrapper
 
