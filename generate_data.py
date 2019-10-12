@@ -1,6 +1,6 @@
 """Generate a random process mining dataset.
 
-Run from the command line:
+Run from the command line (without brackets):
 python generate_data.py [input_path] [approx_rows]
 
 Or run in your IDE without any arguments. Just change the global constants below.
@@ -17,12 +17,12 @@ from uuid import uuid4
 
 
 # Global constants
-START = "START"
-END = "END"
-DURATION_UNIT = "minutes"
 INPUT_PATH = "examples/process_123.xlsx"
 APPROX_ROWS = 100
-TIME_RANGE = [datetime(2016, 1, 1), datetime(2018, 12, 31)]
+DURATION_UNIT = "minutes"
+START = "START"
+END = "END"
+DATASET_TIME_RANGE = [datetime(2016, 1, 1), datetime(2018, 12, 31)]
 WORKING_HOURS = [time(hour=9), time(hour=17)]
 WORKING_WEEKEND = False
 
@@ -38,12 +38,13 @@ def parse_argv(input_path=None, approx_rows=None):
 def inspect_df(df, n=5):
     print(df.shape)
     try:
+        # For Jupyter Notebooks
         display(df.head(n))
     except NameError:
         print(df.head(n))
 
 
-def to_timedelta(x, td_unit="minutes"):
+def to_timedelta(x, td_unit=DURATION_UNIT):
     return eval("timedelta(" + td_unit + "=float(x))")
 
 
@@ -137,7 +138,7 @@ class Case:
     # Initiate attributes of a new instance of Case
     def __init__(self, process_description):
         self.uuid = str(uuid4())
-        self.clock = random_datetime_between(*TIME_RANGE)
+        self.clock = random_datetime_between(*DATASET_TIME_RANGE)
         self.process_description = process_description
 
         # Initiate current state with some values in a dictionary
@@ -291,7 +292,7 @@ def main():
     # Note: If you are new to this script, definitely take a look at this dataframe
     # inspect_df(process_description, n=10)
 
-    # We'll drop START and END rows later, so we need to correct approx_rows for that
+    # We'll drop START and END rows later, so we need to correct (estimation) approx_rows for that
     n_steps = len(excel_steps)
     approx_rows = approx_rows * n_steps / (n_steps - 2)
 
@@ -308,7 +309,7 @@ def main():
         print("\r" + str(len(df)), end="")
     print("\n")
 
-    # The basic dataset is done, but we'll do a few more things
+    # The basic dataset is done, but we'll do some cleaning up
     df = clean_up(df)
 
     # Apply format we need for PAFnow
