@@ -2,9 +2,11 @@
 This script generates a custom, randomized dataset which can be analyzed with process mining. Useful for demos or workshops! 
 
 ## How to use
-These instructions assume you've installed Python and git.
-1. Clone this repository:  
+These instructions assume you've installed and set up [Python](https:/www.anaconda.com/distribution/#download-section) and [git](https://gitforwindows.org/).
+1. Clone this repository (run the command in a terminal or Anaconda Prompt):  
 `git clone https://github.com/eiffelanalytics/generate-process-mining-data`
+1. Test it:
+`python generate_data.py examples/process_123.xlsx 1000`
 1. Copy and edit one of the example Excel files so it matches *your process*.
 1. Run the script from a terminal:  
 `python generate_data.py [input_file] [approx_rows]`  
