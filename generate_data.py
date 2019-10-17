@@ -17,8 +17,8 @@ from uuid import uuid4
 
 
 # Global constants
-INPUT_PATH = "examples/process_123.xlsx"
-APPROX_ROWS = 100
+INPUT_PATH = "input/process_KYC.xlsx"
+APPROX_ROWS = 10000
 DURATION_UNIT = "minutes"
 START = "START"
 END = "END"
@@ -61,6 +61,10 @@ def read_input_file(input_path):
         excel_steps["duration_outliers"] = False
     if "wait_time_outliers" not in keys:
         excel_steps["wait_time_outliers"] = False
+
+    # Fill NaN
+    excel_steps.duration.fillna(value=0, inplace=True)
+    excel_steps.wait_time.fillna(value=0, inplace=True)
 
     # Convert the time columns to a timedelta
     excel_steps.duration = excel_steps.duration.apply(to_timedelta)
@@ -258,7 +262,7 @@ def apply_pafnow_format(df):
             "step_id": "ActivityId",
             "step_name": "ActivityName",
             "start_time": "Timestamp",
-            "end_time": "TimestampEnd",
+            # "end_time": "TimestampEnd", # This needs a fix from PAFnow Companion
         },
         inplace=True,
     )
