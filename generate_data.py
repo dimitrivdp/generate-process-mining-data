@@ -19,7 +19,7 @@ from pprint import pprint
 
 # Global constants
 INPUT_PATH = "data/example/Example_process.xlsx"
-APPROX_ROWS = 1000
+APPROX_ROWS = 100
 DURATION_UNIT = "minutes"
 START = "<Start>"
 END = "<End>"
@@ -129,18 +129,17 @@ class Case:
 
     # Initiate attributes of a new instance of Case
     def __init__(self, process_description):
-        self.uuid = str(uuid4())
+        self.uuid = str(uuid4())[:8]
         self.clock = datetime(2019, 4, 1)  
         # random_datetime_between(*DATASET_TIME_RANGE)
         self.process_description = process_description
 
-
-        # Initiate current state with some values in a dictionary
+        # Initiate the case at START
         self.current = {
             "CaseId": self.uuid,
             "ActivityId": START,
-            "Timestamp": self.clock,
-            "TimestampEnd": None,
+            #"Timestamp": self.clock,
+            #"TimestampEnd": None,
             # And insert the values of the process description for this step
             **self.process_description.loc[START].to_dict(),
         }
@@ -149,20 +148,9 @@ class Case:
         self.history = []
 
     def do_current_activity(self):
-        # Execute the step, so time will pass
-        self.clock += randomize_timedelta(self.current["DurationActivity"])
-
-        # Register the end time of the step
+        self.clock += self.current["DurationActivity"]
         self.current["TimestampEnd"] = self.clock
-
-        # This step is completed so write the current status to history
         self.history.append(self.current)
-
-    def wait_after_step(self):
-        # Add some wait time, that's all for now
-        self.clock += randomize_timedelta(
-            self.current["wait_time"], self.current["wait_time_outliers"]
-        )
 
     def choose_target_activity(self):
         # Choose (random) the next step
@@ -171,43 +159,26 @@ class Case:
             self.current["ProbabilityPossibleTargets"],
         )[0]
 
-        # Actually start the next step by creating a new current status
+        # Update target activity and idle time
+        self.target = {
+            "ActivityId": self.current["ActivityIdPossibleTargets"][target],
+            "DurationIdle": self.current["DurationIdle"][target],
+        }
+
+    def wait_after_step(self):
+        # Add some wait time, that's all for now
+        self.clock += self.target["DurationIdle"]
+
+        # now start the next step
         self.current = {
             "CaseId": self.uuid,
-            "ActivityId": self.current["ActitityIdPossibleTargets"][target],
+            "ActivityId": self.target["ActivityId"],
             "Timestamp": self.clock,
-            "TimestampEnd": ,
-            # Again, also add process description for this step
-            **self.process_description.loc[next_step_id].to_dict(),
+            "TimestampEnd": None,
+            **self.process_description.loc[self.target["ActivityId"]].to_dict(),
         }
 
     def walk_through_process(self):
-        """Process layout and corresponding methods
-
-        Case.__init__()     > START
-            |
-        do_current_step()   > START completed
-            |
-        wait_after_step()   > Clock ticks
-            |
-        go_to_next_step()   > (Step 1) initiated
-            |
-        do_current_step()   > (Step 1) completed
-            |
-        wait_after_step()   > Clock ticks
-            |
-        go_to_next_step()   > (Step 2) initiated
-            .
-            .
-            .
-        go_to_next_step()   > END initiated
-            |
-        do_current_step()   > END completed
-            |
-        return
-        
-        """
-
         # Do all the steps until at END. Simple right?
         while True:
             self.do_current_activity()
@@ -215,47 +186,28 @@ class Case:
                 return
             self.choose_target_activity()
             self.wait_after_step()
-            self.go_to_next_step()
 
 
 def clean_up(df):
     # Remove START and END rows
-    df = df[(df.step_id != START) & (df.step_id != END)]
+    df = df[(df.ActivityId != START) & (df.ActivityId != END)]
 
     # Remove some abundant columns
     df = df.drop(
         columns=[
-            "duration",
-            "duration_outliers",
-            "wait_time",
-            "wait_time_outliers",
-            "next_possible_steps_id",
-            "next_possible_steps_probability",
+            "DurationActivity",
+            "DurationIdle",
+            "ActivityIdPossibleTargets",
+            "ProbabilityPossibleTargets",
         ]
     )
     return df
 
 
 def apply_pafnow_format(df):
-    # Change column names
-    df.rename(
-        columns={
-            "case_id": "CaseId",
-            "step_id": "ActivityId",
-            "step_name": "ActivityName",
-            "start_time": "Timestamp",
-            "end_time": "TimestampEnd",
-        },
-        inplace=True,
-    )
-
     # Set date time format to YYYY-MM-DD HH:MM:SS
     df.Timestamp = df.Timestamp.dt.strftime("%Y-%m-%d %H:%M:%S")
     df.TimestampEnd = df.TimestampEnd.dt.strftime("%Y-%m-%d %H:%M:%S")
-
-    # BUG: In pafnow companion! TimestampEnd gives an error. Remove this line when the bug is fixed!
-    df.rename(columns={"TimestampEnd": "DontUse"}, inplace=True)
-
     return df
 
 
@@ -265,7 +217,6 @@ def stopwatch(func):
         timer = times.time()
         func()
         print("Done in: %.1f sec" % (times.time() - timer))
-
     return wrapper
 
 
@@ -307,9 +258,8 @@ def main():
 
     inspect_df(df)
 
-    # Save to file
+    # Save to file into the same folder as the input file
     output_path = splitext(input_path)[0] + ".csv"
-    makedirs(output_path, exist_ok=True)
     df.to_csv(output_path, index=False)
     print("Dataset saved in: " + output_path)
 
