@@ -8,13 +8,12 @@ Or run in your IDE without any arguments. Just change the global constants below
 
 import sys
 from os import makedirs
-from os.path import join, split, splitext
+from os.path import join, splitext
 from datetime import timedelta, datetime, time
 import time as times
 import pandas as pd
 from random import gauss, random, choices
 from uuid import uuid4
-from pprint import pprint
 
 
 # Global constants
