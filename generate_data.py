@@ -14,14 +14,15 @@ import time as times
 import pandas as pd
 from random import gauss, random, choices
 from uuid import uuid4
+from pprint import pprint
 
 
 # Global constants
-INPUT_PATH = "input/process_KYC.xlsx"
+INPUT_PATH = "data/example/Example_process.xlsx"
 APPROX_ROWS = 1000
 DURATION_UNIT = "minutes"
-START = "START"
-END = "END"
+START = "<Start>"
+END = "<End>"
 DATASET_TIME_RANGE = [datetime(2016, 1, 1), datetime(2018, 12, 31)]
 WORKING_HOURS = [time(hour=9), time(hour=17)]
 WORKING_WEEKEND = False
@@ -37,11 +38,7 @@ def parse_argv(input_path=None, approx_rows=None):
 
 def inspect_df(df, n=5):
     print(df.shape)
-    try:
-        # For Jupyter Notebooks
-        display(df.head(n))
-    except NameError:
-        print(df.head(n))
+    print(df.head(n))
 
 
 def to_timedelta(x, td_unit=DURATION_UNIT):
@@ -51,53 +48,44 @@ def to_timedelta(x, td_unit=DURATION_UNIT):
 def read_input_file(input_path):
     # Required columns: step_id, duration
     # Optional columns: step_name, wait_time, duration_outliers, wait_time_outliers and other custom columns
-    excel_steps = pd.read_excel(input_path, sheet_name="steps", index_col="step_id")
-
-    # Optional missing wait_time, duration_outliers and wait_time_outliers are added because the script relies on them
-    keys = list(excel_steps.columns)
-    if "wait_time" not in keys:
-        excel_steps["wait_time"] = 0
-    if "duration_outliers" not in keys:
-        excel_steps["duration_outliers"] = False
-    if "wait_time_outliers" not in keys:
-        excel_steps["wait_time_outliers"] = False
-
+    excel_activities = pd.read_excel(
+        input_path, sheet_name="Activities", index_col="ActivityId"
+    )
+    # TODO: assert column names
     # Fill NaN
-    excel_steps.duration.fillna(value=0, inplace=True)
-    excel_steps.wait_time.fillna(value=0, inplace=True)
-
-    # Convert the time columns to a timedelta
-    excel_steps.duration = excel_steps.duration.apply(to_timedelta)
-    excel_steps.wait_time = excel_steps.wait_time.apply(to_timedelta)
+    excel_activities.DurationActivity.fillna(value=0, inplace=True)
+    excel_activities.DurationActivity = excel_activities.DurationActivity.apply(
+        to_timedelta
+    )
 
     # Flow sheet has a fixed layout: step_id, next_step_id and probability
-    excel_flow = pd.read_excel(
-        input_path, sheet_name="process_flow", index_col="step_id"
-    )
+    excel_flow = pd.read_excel(input_path, sheet_name="Flow", index_col="ActivityId")
+    excel_flow.DurationIdle.fillna(value=0, inplace=True)
+    excel_flow.DurationIdle = excel_flow.DurationIdle.apply(to_timedelta)
 
     # TODO: assert that
     # Activities: first step and last step must be duration = 0
     # Datatypes: timedeltas and bools, etc
     # All probability columns: negative probability can not exist
     # All probability columns: all rows must sum to 1, except row N, must all equal 0
-    return (excel_steps, excel_flow)
+    return (excel_activities, excel_flow)
 
 
-def merge_flow_into_steps(excel_steps, excel_flow):
+def merge_flow_into_steps(excel_activities, excel_flow):
     # Group the flow into lists per step_id to use with random.choices()
     excel_flow_grouped = (
-        excel_flow.groupby(by="step_id")
+        excel_flow.groupby(by="ActivityId")
         .agg(list)
         .rename(
             columns={
-                "next_step_id": "next_possible_steps_id",
-                "probability": "next_possible_steps_probability",
+                "ActivityIdTarget": "ActivityIdPossibleTargets",
+                "Probability": "ProbabilityPossibleTargets",
             }
         )
     )
     # Join the steps dataframe with grouped flow
     process_description = pd.merge(
-        excel_steps, excel_flow_grouped, how="left", on="step_id"
+        excel_activities, excel_flow_grouped, how="left", on="ActivityId"
     )
     return process_description
 
@@ -142,15 +130,17 @@ class Case:
     # Initiate attributes of a new instance of Case
     def __init__(self, process_description):
         self.uuid = str(uuid4())
-        self.clock = random_datetime_between(*DATASET_TIME_RANGE)
+        self.clock = datetime(2019, 4, 1)  
+        # random_datetime_between(*DATASET_TIME_RANGE)
         self.process_description = process_description
+
 
         # Initiate current state with some values in a dictionary
         self.current = {
-            "case_id": self.uuid,
-            "step_id": START,
-            "start_time": self.clock,
-            "end_time": None,
+            "CaseId": self.uuid,
+            "ActivityId": START,
+            "Timestamp": self.clock,
+            "TimestampEnd": None,
             # And insert the values of the process description for this step
             **self.process_description.loc[START].to_dict(),
         }
@@ -158,14 +148,12 @@ class Case:
         # Keep track of all completed steps in a list
         self.history = []
 
-    def do_current_step(self):
+    def do_current_activity(self):
         # Execute the step, so time will pass
-        self.clock += randomize_timedelta(
-            self.current["duration"], self.current["duration_outliers"]
-        )
+        self.clock += randomize_timedelta(self.current["DurationActivity"])
 
         # Register the end time of the step
-        self.current["end_time"] = self.clock
+        self.current["TimestampEnd"] = self.clock
 
         # This step is completed so write the current status to history
         self.history.append(self.current)
@@ -176,26 +164,19 @@ class Case:
             self.current["wait_time"], self.current["wait_time_outliers"]
         )
 
-    def go_to_next_step(self):
-        # Check if the working day is already over
-        while not is_working_time(self.clock):
-            # Try again tomorrow morning
-            self.clock = self.clock.replace(
-                hour=WORKING_HOURS[0].hour, minute=WORKING_HOURS[0].minute
-            ) + timedelta(days=1)
-
+    def choose_target_activity(self):
         # Choose (random) the next step
-        next_step_id = choices(
-            self.current["next_possible_steps_id"],
-            self.current["next_possible_steps_probability"],
+        target = choices(
+            range(len(self.current["ProbabilityPossibleTargets"])),
+            self.current["ProbabilityPossibleTargets"],
         )[0]
 
         # Actually start the next step by creating a new current status
         self.current = {
-            "case_id": self.uuid,
-            "step_id": next_step_id,
-            "start_time": self.clock,
-            "end_time": None,
+            "CaseId": self.uuid,
+            "ActivityId": self.current["ActitityIdPossibleTargets"][target],
+            "Timestamp": self.clock,
+            "TimestampEnd": ,
             # Again, also add process description for this step
             **self.process_description.loc[next_step_id].to_dict(),
         }
@@ -229,9 +210,10 @@ class Case:
 
         # Do all the steps until at END. Simple right?
         while True:
-            self.do_current_step()
-            if self.current["step_id"] == END:
+            self.do_current_activity()
+            if self.current["ActivityId"] == END:
                 return
+            self.choose_target_activity()
             self.wait_after_step()
             self.go_to_next_step()
 
@@ -272,7 +254,7 @@ def apply_pafnow_format(df):
     df.TimestampEnd = df.TimestampEnd.dt.strftime("%Y-%m-%d %H:%M:%S")
 
     # BUG: In pafnow companion! TimestampEnd gives an error. Remove this line when the bug is fixed!
-    df.rename(columns={"TimestampEnd": "TimestampEndDontUse"}, inplace=True)
+    df.rename(columns={"TimestampEnd": "DontUse"}, inplace=True)
 
     return df
 
@@ -326,8 +308,8 @@ def main():
     inspect_df(df)
 
     # Save to file
-    output_path = join("output", splitext(split(input_path)[1])[0] + ".csv")
-    makedirs("output", exist_ok=True)
+    output_path = splitext(input_path)[0] + ".csv"
+    makedirs(output_path, exist_ok=True)
     df.to_csv(output_path, index=False)
     print("Dataset saved in: " + output_path)
 

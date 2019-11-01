@@ -1,0 +1,4 @@
+toevoegen script argument voor output file
+replace in outputfile all whitespace van input file met _underscore_
+bij runnen in git bash print ie niet tussentijds hoever hij al is
+stuur output CSV naar dezelfde folder als input Excel
