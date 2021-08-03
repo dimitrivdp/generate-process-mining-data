@@ -1,9 +1,9 @@
-"""Generate a random process mining dataset.
+"""Generate a random process mining dataset based on an Excel input file.
 
 Run from the command line (without brackets):
 python generate_data.py [input_path] [approx_rows]
 
-Or run in your IDE without any arguments. Just change the global constants below.
+Or run in your IDE without any arguments. Just change the constants below.
 """
 
 import sys
@@ -16,28 +16,20 @@ from random import gauss, random, choices
 from uuid import uuid4
 
 
-# Global constants
+# Use these constants if run with VS Code
 INPUT_PATH = "data/example/Example_process.xlsx"
 APPROX_ROWS = 100
 DURATION_UNIT = "minutes"
 START = "<Start>"
 END = "<End>"
-DATASET_TIME_RANGE = [datetime(2016, 1, 1), datetime(2018, 12, 31)]
-WORKING_HOURS = [time(hour=9), time(hour=17)]
-WORKING_WEEKEND = False
 
 
-def parse_argv(input_path=None, approx_rows=None):
+def parse_argv():
     # argv = argument vector
     n = len(sys.argv)
-    input_path = sys.argv[1] if n > 1 else input_path
-    approx_rows = int(sys.argv[2]) if n > 2 else approx_rows
+    input_path = sys.argv[1] if n > 1 else INPUT_PATH
+    approx_rows = int(sys.argv[2]) if n > 2 else APPROX_ROWS
     return (input_path, approx_rows)
-
-
-def inspect_df(df, n=5):
-    print(df.shape)
-    print(df.head(n))
 
 
 def to_timedelta(x, td_unit=DURATION_UNIT):
@@ -45,8 +37,8 @@ def to_timedelta(x, td_unit=DURATION_UNIT):
 
 
 def read_input_file(input_path):
-    # Required columns: step_id, duration
-    # Optional columns: step_name, wait_time, duration_outliers, wait_time_outliers and other custom columns
+    # Required columns: ActivityId, DurationActivity
+    # Optional columns: ActivityName, Resource
     excel_activities = pd.read_excel(
         input_path, sheet_name="Activities", index_col="ActivityId"
     )
