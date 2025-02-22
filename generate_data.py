@@ -17,8 +17,8 @@ from uuid import uuid4
 
 
 # Use these constants if run with VS Code
-INPUT_PATH = "data/example/Example_process.xlsx"
-APPROX_ROWS = 100
+INPUT_PATH = "data/insurance1/process1.xlsx"
+APPROX_ROWS = 1000
 DURATION_UNIT = "minutes"
 START = "<Start>"
 END = "<End>"
@@ -214,7 +214,7 @@ def stopwatch(func):
 @stopwatch
 def main():
     # Parse command line arguments (input filename and approximate number of rows)
-    (input_path, approx_rows) = parse_argv(INPUT_PATH, APPROX_ROWS)
+    (input_path, approx_rows) = parse_argv()
 
     # Read and process the sheets from the input Excel
     print("Reading input from:", input_path)
@@ -237,7 +237,7 @@ def main():
         case.walk_through_process()
 
         # Append the history (completed steps) of this case to our dataset
-        df = df.append(case.history)
+        df = df._append(case.history)
         print("\r" + str(len(df)), end="")
     print("\n")
 
@@ -247,7 +247,7 @@ def main():
     # Apply format we need for PAFnow
     df = apply_pafnow_format(df)
 
-    inspect_df(df)
+    #inspect_df(df)
 
     # Save to file into the same folder as the input file
     output_path = splitext(input_path)[0] + ".csv"

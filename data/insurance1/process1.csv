@@ -1,0 +1,819 @@
+CaseId,ActivityId,ActivityName,Resource,Comment,TimestampEnd,Timestamp
+d75c3ba4,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+d75c3ba4,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+d75c3ba4,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+d75c3ba4,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+d75c3ba4,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+f0a5de04,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f0a5de04,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+f0a5de04,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+5a95d62f,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+5a95d62f,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+5a95d62f,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+ff159b08,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ff159b08,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+ff159b08,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+ff159b08,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+ff159b08,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+ff159b08,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+2382e97c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2382e97c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2382e97c,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+0fbdb75e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+0fbdb75e,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+0fbdb75e,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+b56d2777,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+b56d2777,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+b56d2777,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+b56d2777,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+a7825652,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a7825652,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a7825652,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+a7825652,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+78e04483,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+78e04483,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+78e04483,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+78e04483,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+d3f14756,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+d3f14756,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+d3f14756,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+d3f14756,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+5d54635f,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+5d54635f,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+5d54635f,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+5d54635f,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+e6b7831c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e6b7831c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+e6b7831c,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+e6b7831c,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+ef1ac582,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ef1ac582,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+ef1ac582,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+c92a36c5,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+c92a36c5,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+c92a36c5,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+c92a36c5,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+e51a36dc,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e51a36dc,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+e51a36dc,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+e51a36dc,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+ef263b9b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ef263b9b,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+ef263b9b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+ef263b9b,a10,Request info,Advisor,[nan],2019-04-01 01:51:00,2019-04-01 01:31:00
+ef263b9b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 02:11:00,2019-04-01 01:51:00
+ef263b9b,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 02:52:00,2019-04-01 02:12:00
+ef263b9b,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 03:12:00,2019-04-01 02:52:00
+b731be42,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+b731be42,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+b731be42,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+1298609a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+1298609a,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+1298609a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+1298609a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+1298609a,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+1298609a,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+bbf51ac1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+bbf51ac1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+bbf51ac1,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+bbf51ac1,a8,Decline case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+bbf51ac1,a9,Prepare rejection letter,Manager,[nan],2019-04-01 02:22:00,2019-04-01 02:02:00
+83ebbb1f,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+83ebbb1f,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+83ebbb1f,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+83ebbb1f,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+f5a7cc11,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f5a7cc11,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+f5a7cc11,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+f5a7cc11,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+f5a7cc11,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+f5a7cc11,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+58fa980b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+58fa980b,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+58fa980b,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+424064ab,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+424064ab,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+424064ab,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+4dccdf40,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+4dccdf40,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+4dccdf40,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+4dccdf40,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+0197e54d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+0197e54d,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+0197e54d,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+0197e54d,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+0197e54d,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+0197e54d,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+bc5ccdd5,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+bc5ccdd5,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+bc5ccdd5,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+bc5ccdd5,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+bc5ccdd5,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+02b14270,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+02b14270,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+02b14270,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+f56d8ca3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f56d8ca3,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+f56d8ca3,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+44a30c87,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+44a30c87,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+44a30c87,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+124941f3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+124941f3,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+124941f3,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+2ceb6c27,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2ceb6c27,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2ceb6c27,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+2ceb6c27,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+f0701492,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f0701492,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+f0701492,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+f0701492,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+535b988b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+535b988b,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+535b988b,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+e9245ef2,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e9245ef2,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+e9245ef2,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+e9245ef2,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+d8286723,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+d8286723,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+d8286723,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+5cdba5bd,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+5cdba5bd,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+5cdba5bd,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+4ad0780e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+4ad0780e,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+4ad0780e,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+ab2676ef,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ab2676ef,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+ab2676ef,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+ab2676ef,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+a431a38d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a431a38d,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a431a38d,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+cf20854e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+cf20854e,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+cf20854e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+cf20854e,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+cf20854e,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+cf20854e,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+31c38b66,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+31c38b66,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+31c38b66,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+31c38b66,a8,Decline case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+31c38b66,a9,Prepare rejection letter,Manager,[nan],2019-04-01 02:22:00,2019-04-01 02:02:00
+f49c5e37,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f49c5e37,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+f49c5e37,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+f49c5e37,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+6dfd1f65,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+6dfd1f65,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+6dfd1f65,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+71d4c9ea,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+71d4c9ea,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+71d4c9ea,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+71d4c9ea,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+33323797,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+33323797,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+33323797,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+6c179ddb,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+6c179ddb,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+6c179ddb,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+6c179ddb,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+79d69946,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+79d69946,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+79d69946,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+c5846992,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+c5846992,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+c5846992,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+c5846992,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+c5846992,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+c5846992,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+1673842a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+1673842a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+1673842a,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+1673842a,a8,Decline case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+1673842a,a9,Prepare rejection letter,Manager,[nan],2019-04-01 02:22:00,2019-04-01 02:02:00
+9a39c0dd,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+9a39c0dd,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+9a39c0dd,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+9a39c0dd,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+9a39c0dd,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+ad18a616,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ad18a616,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+ad18a616,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+ad18a616,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+a87a5308,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a87a5308,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a87a5308,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+a87a5308,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+8df5313e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+8df5313e,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+8df5313e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+8df5313e,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+8df5313e,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+8df5313e,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+9cabf6e7,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+9cabf6e7,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+9cabf6e7,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+9cabf6e7,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+026909c3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+026909c3,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+026909c3,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+026909c3,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+a32ff99b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a32ff99b,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a32ff99b,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+a32ff99b,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+a32ff99b,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+a32ff99b,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+b7bc04e0,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+b7bc04e0,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+b7bc04e0,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+b7bc04e0,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+0faf7471,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+0faf7471,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+0faf7471,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+ae88a102,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ae88a102,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+ae88a102,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+ae88a102,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+e1086922,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e1086922,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+e1086922,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+e1086922,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+e1086922,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+e1086922,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+cfab2dec,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+cfab2dec,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+cfab2dec,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+ca1a9215,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ca1a9215,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+ca1a9215,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+ca1a9215,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+ca1a9215,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+f2bf4aaa,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f2bf4aaa,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+f2bf4aaa,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+f2bf4aaa,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+dfd0c405,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+dfd0c405,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+dfd0c405,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+dfd0c405,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+7980264d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+7980264d,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+7980264d,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+3b36d598,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+3b36d598,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+3b36d598,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+3b36d598,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+6497c9f1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+6497c9f1,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+6497c9f1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+6497c9f1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+6497c9f1,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+6497c9f1,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+0f495ebb,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+0f495ebb,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+0f495ebb,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+83f60b27,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+83f60b27,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+83f60b27,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+83f60b27,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+c976d3cd,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+c976d3cd,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+c976d3cd,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+c976d3cd,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+c976d3cd,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+92856dd0,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+92856dd0,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+92856dd0,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+3c801330,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+3c801330,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+3c801330,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+311c87c3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+311c87c3,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+311c87c3,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+311c87c3,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+311c87c3,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+311c87c3,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+dfeced0d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+dfeced0d,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+dfeced0d,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+96c489d7,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+96c489d7,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+96c489d7,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+c946679d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+c946679d,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+c946679d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+c946679d,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+c946679d,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+652811ad,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+652811ad,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+652811ad,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+652811ad,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+9c41d5d7,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+9c41d5d7,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+9c41d5d7,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+9c41d5d7,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+91d78566,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+91d78566,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+91d78566,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+2b9ecaa1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2b9ecaa1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2b9ecaa1,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+2b9ecaa1,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+6928f3d7,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+6928f3d7,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+6928f3d7,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+6928f3d7,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+90a755cd,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+90a755cd,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+90a755cd,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+90a755cd,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+5b3c1fd5,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+5b3c1fd5,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+5b3c1fd5,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+5b3c1fd5,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+8959e625,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+8959e625,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+8959e625,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+692d3603,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+692d3603,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+692d3603,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+692d3603,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+692d3603,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+692d3603,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+0b20a2f4,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+0b20a2f4,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+0b20a2f4,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+acda8823,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+acda8823,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+acda8823,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+acda8823,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+ddfc0e69,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ddfc0e69,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+ddfc0e69,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+ddfc0e69,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+ddfc0e69,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+ddfc0e69,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+e74621ad,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e74621ad,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+e74621ad,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+65bbb8d9,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+65bbb8d9,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+65bbb8d9,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+65bbb8d9,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+65bbb8d9,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+65bbb8d9,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+8d93ddbf,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+8d93ddbf,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+8d93ddbf,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+8d93ddbf,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+6017d47c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+6017d47c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+6017d47c,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+6017d47c,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+df9100f9,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+df9100f9,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+df9100f9,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+df9100f9,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+df9100f9,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+df9100f9,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+7c8e051a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+7c8e051a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+7c8e051a,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+7c8e051a,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+9b0b58c3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+9b0b58c3,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+9b0b58c3,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+9b0b58c3,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+1f2ef144,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+1f2ef144,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+1f2ef144,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+1f2ef144,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+1f2ef144,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+645acf71,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+645acf71,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+645acf71,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+645acf71,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+3d697b14,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+3d697b14,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+3d697b14,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+3d697b14,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+10ca732c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+10ca732c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+10ca732c,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+10ca732c,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+cce445b1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+cce445b1,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+cce445b1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+cce445b1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+cce445b1,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+49b1d8b1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+49b1d8b1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+49b1d8b1,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+84dc05f6,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+84dc05f6,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+84dc05f6,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+85d8d2fc,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+85d8d2fc,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+85d8d2fc,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+85d8d2fc,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+cda9406f,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+cda9406f,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+cda9406f,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+cda9406f,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+05818211,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+05818211,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+05818211,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+05818211,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+7f06a023,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+7f06a023,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+7f06a023,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+9020c654,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+9020c654,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+9020c654,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+6a2984d1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+6a2984d1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+6a2984d1,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+6a2984d1,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+148ce1b3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+148ce1b3,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+148ce1b3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+148ce1b3,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+148ce1b3,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+148ce1b3,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+fbb4e91d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+fbb4e91d,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+fbb4e91d,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+fbb4e91d,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+fa1cce73,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+fa1cce73,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+fa1cce73,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+fa1cce73,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+fa1cce73,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+fa1cce73,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+e58a696a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e58a696a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+e58a696a,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+e58a696a,a8,Decline case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+e58a696a,a9,Prepare rejection letter,Manager,[nan],2019-04-01 02:22:00,2019-04-01 02:02:00
+e132b4b4,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e132b4b4,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+e132b4b4,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+e132b4b4,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+e132b4b4,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+e132b4b4,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+45c62348,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+45c62348,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+45c62348,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+45c62348,a10,Request info,Advisor,[nan],2019-04-01 01:51:00,2019-04-01 01:31:00
+45c62348,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 02:11:00,2019-04-01 01:51:00
+45c62348,a10,Request info,Advisor,[nan],2019-04-01 02:46:00,2019-04-01 02:26:00
+45c62348,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 03:06:00,2019-04-01 02:46:00
+45c62348,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 03:47:00,2019-04-01 03:07:00
+45c62348,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 04:07:00,2019-04-01 03:47:00
+e4dcbd69,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e4dcbd69,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+e4dcbd69,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+e4dcbd69,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+e4dcbd69,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 02:37:00,2019-04-01 01:57:00
+e4dcbd69,a8,Decline case,Manager,[nan],2019-04-01 02:57:00,2019-04-01 02:37:00
+e4dcbd69,a9,Prepare rejection letter,Manager,[nan],2019-04-01 03:17:00,2019-04-01 02:57:00
+f8871e9c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f8871e9c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+f8871e9c,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+951eb79a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+951eb79a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+951eb79a,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+951eb79a,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+82bd7fff,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+82bd7fff,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+82bd7fff,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+82bd7fff,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+b749ed1c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+b749ed1c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+b749ed1c,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+b749ed1c,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+b749ed1c,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+b749ed1c,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+d233559f,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+d233559f,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+d233559f,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+d233559f,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+cc826222,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+cc826222,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+cc826222,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+cc826222,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+c18c83c3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+c18c83c3,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+c18c83c3,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+c18c83c3,a8,Decline case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+c18c83c3,a9,Prepare rejection letter,Manager,[nan],2019-04-01 02:22:00,2019-04-01 02:02:00
+8ded24a1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+8ded24a1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+8ded24a1,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+e8aaa212,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e8aaa212,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+e8aaa212,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+024f4985,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+024f4985,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+024f4985,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+024f4985,a10,Request info,Advisor,[nan],2019-04-01 01:51:00,2019-04-01 01:31:00
+024f4985,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 02:11:00,2019-04-01 01:51:00
+024f4985,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 02:52:00,2019-04-01 02:12:00
+024f4985,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 03:32:00,2019-04-01 02:52:00
+024f4985,a7,Approve case,Manager,[nan],2019-04-01 03:52:00,2019-04-01 03:32:00
+024f4985,a4,Calculate annual premium,Advisor,[nan],2019-04-01 04:22:00,2019-04-01 03:52:00
+024f4985,a5,Create insurance policy,Advisor,[nan],2019-04-01 05:12:00,2019-04-01 04:32:00
+2793660b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2793660b,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2793660b,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+2793660b,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+ce442d33,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ce442d33,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+ce442d33,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+ce442d33,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+ce442d33,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+2d821718,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2d821718,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2d821718,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+d876a3ed,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+d876a3ed,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+d876a3ed,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+d876a3ed,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+6afa7ce2,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+6afa7ce2,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+6afa7ce2,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+6afa7ce2,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+c30b2ec0,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+c30b2ec0,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+c30b2ec0,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+c30b2ec0,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+c30b2ec0,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+c30b2ec0,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+268d80e3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+268d80e3,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+268d80e3,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+268d80e3,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+268d80e3,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+268d80e3,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+08b79c59,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+08b79c59,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+08b79c59,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+08b79c59,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+08b79c59,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+08b79c59,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+d197bf8a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+d197bf8a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+d197bf8a,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+d197bf8a,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+2fd2867c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2fd2867c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2fd2867c,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+2fd2867c,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+80174a08,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+80174a08,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+80174a08,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+636c10e9,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+636c10e9,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+636c10e9,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+636c10e9,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+636c10e9,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+f52fc7f4,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f52fc7f4,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+f52fc7f4,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+dba2a169,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+dba2a169,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+dba2a169,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+dba2a169,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+f6721119,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f6721119,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+f6721119,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+f6721119,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+f6721119,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+f6721119,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+33156b3e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+33156b3e,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+33156b3e,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+33156b3e,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+2ec5e5d6,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2ec5e5d6,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2ec5e5d6,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+2ec5e5d6,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+2ec5e5d6,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+2ec5e5d6,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+a9031d9e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a9031d9e,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a9031d9e,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+a9031d9e,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+a3113d39,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a3113d39,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a3113d39,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+a1818592,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a1818592,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+a1818592,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+a1818592,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+a1818592,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+02472f3a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+02472f3a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+02472f3a,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+c77ad8b2,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+c77ad8b2,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+c77ad8b2,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+c77ad8b2,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+c77ad8b2,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+c77ad8b2,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+943b07be,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+943b07be,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+943b07be,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+943b07be,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+88aec396,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+88aec396,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+88aec396,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+88aec396,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+3560b984,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+3560b984,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+3560b984,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+3560b984,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+cb08cffc,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+cb08cffc,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+cb08cffc,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+cb08cffc,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+a300bfe1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a300bfe1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a300bfe1,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+47505615,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+47505615,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+47505615,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+47505615,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+0f2061d6,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+0f2061d6,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+0f2061d6,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+0f2061d6,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+76205de5,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+76205de5,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+76205de5,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+a444233e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a444233e,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a444233e,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+0b5fc201,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+0b5fc201,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+0b5fc201,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+0b5fc201,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+0b5fc201,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+0b5fc201,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+fd650326,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+fd650326,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+fd650326,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+8998837c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+8998837c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+8998837c,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+8998837c,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+80bd6e37,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+80bd6e37,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+80bd6e37,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+80bd6e37,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+2a95fe70,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2a95fe70,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2a95fe70,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+50efd275,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+50efd275,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+50efd275,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+50efd275,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+15702d5a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+15702d5a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+15702d5a,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+89480492,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+89480492,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+89480492,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+89480492,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+df40bd2b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+df40bd2b,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+df40bd2b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+df40bd2b,a10,Request info,Advisor,[nan],2019-04-01 01:51:00,2019-04-01 01:31:00
+df40bd2b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 02:11:00,2019-04-01 01:51:00
+df40bd2b,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 02:52:00,2019-04-01 02:12:00
+df40bd2b,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 03:12:00,2019-04-01 02:52:00
+9c947be7,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+9c947be7,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+9c947be7,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+9c947be7,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+9c947be7,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+9c947be7,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+66c2e974,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+66c2e974,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+66c2e974,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+66c2e974,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+66c2e974,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 02:17:00,2019-04-01 01:57:00
+4d78682d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+4d78682d,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+4d78682d,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+ab81bfec,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ab81bfec,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+ab81bfec,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+782835bd,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+782835bd,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+782835bd,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+db0fd194,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+db0fd194,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+db0fd194,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+782d1dfe,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+782d1dfe,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+782d1dfe,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+782d1dfe,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+c080f711,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+c080f711,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+c080f711,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+c080f711,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+e7356e25,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+e7356e25,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+e7356e25,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+e7356e25,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+60527ec2,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+60527ec2,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+60527ec2,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+60527ec2,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+cb90c7f6,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+cb90c7f6,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+cb90c7f6,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+cb90c7f6,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+cb90c7f6,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+cb90c7f6,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+99bca24c,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+99bca24c,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+99bca24c,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+cdee7a22,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+cdee7a22,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+cdee7a22,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+cdee7a22,a10,Request info,Advisor,[nan],2019-04-01 01:51:00,2019-04-01 01:31:00
+cdee7a22,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 02:11:00,2019-04-01 01:51:00
+cdee7a22,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 02:52:00,2019-04-01 02:12:00
+cdee7a22,a4,Calculate annual premium,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:52:00
+cdee7a22,a5,Create insurance policy,Advisor,[nan],2019-04-01 04:12:00,2019-04-01 03:32:00
+2418703d,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+2418703d,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+2418703d,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+2418703d,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+7df4569f,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+7df4569f,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+7df4569f,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+7df4569f,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+dfe18711,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+dfe18711,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+dfe18711,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+dfe18711,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+8d231237,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+8d231237,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+8d231237,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+8d231237,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:57:00,2019-04-01 01:17:00
+8d231237,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:27:00,2019-04-01 01:57:00
+8d231237,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:17:00,2019-04-01 02:37:00
+f43007ec,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+f43007ec,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+f43007ec,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+f43007ec,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+1d4cc23a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+1d4cc23a,a10,Request info,Advisor,[nan],2019-04-01 00:56:00,2019-04-01 00:36:00
+1d4cc23a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 01:16:00,2019-04-01 00:56:00
+1d4cc23a,a10,Request info,Advisor,[nan],2019-04-01 01:51:00,2019-04-01 01:31:00
+1d4cc23a,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 02:11:00,2019-04-01 01:51:00
+1d4cc23a,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 02:52:00,2019-04-01 02:12:00
+1d4cc23a,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 03:32:00,2019-04-01 02:52:00
+1d4cc23a,a7,Approve case,Manager,[nan],2019-04-01 03:52:00,2019-04-01 03:32:00
+1d4cc23a,a4,Calculate annual premium,Advisor,[nan],2019-04-01 04:22:00,2019-04-01 03:52:00
+1d4cc23a,a5,Create insurance policy,Advisor,[nan],2019-04-01 05:12:00,2019-04-01 04:32:00
+45f767c1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+45f767c1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+45f767c1,a6,Check case,Manager,"['Appove Case', 'Decline Case']",2019-04-01 01:42:00,2019-04-01 01:02:00
+45f767c1,a7,Approve case,Manager,[nan],2019-04-01 02:02:00,2019-04-01 01:42:00
+45f767c1,a4,Calculate annual premium,Advisor,[nan],2019-04-01 02:32:00,2019-04-01 02:02:00
+45f767c1,a5,Create insurance policy,Advisor,[nan],2019-04-01 03:22:00,2019-04-01 02:42:00
+30c3e975,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+30c3e975,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+30c3e975,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+30c3e975,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+42f4646e,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+42f4646e,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+42f4646e,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+42f4646e,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+a536575b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+a536575b,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+a536575b,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+a536575b,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+ed6d4c30,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+ed6d4c30,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+ed6d4c30,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+38fbb2f1,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+38fbb2f1,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+38fbb2f1,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+38fbb2f1,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
+55d6830b,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+55d6830b,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+55d6830b,a3,Prepare rejection letter,Advisor,[nan],2019-04-01 01:22:00,2019-04-01 01:02:00
+07e956c7,a1,Check for application completeness,Advisor,"['data missing', 'complete']",2019-04-01 00:21:00,2019-04-01 00:01:00
+07e956c7,a2,Determine eligibility for insurance,Advisor,"['Not eligible', 'Eligible', 'Check Case']",2019-04-01 01:02:00,2019-04-01 00:22:00
+07e956c7,a4,Calculate annual premium,Advisor,[nan],2019-04-01 01:32:00,2019-04-01 01:02:00
+07e956c7,a5,Create insurance policy,Advisor,[nan],2019-04-01 02:22:00,2019-04-01 01:42:00
